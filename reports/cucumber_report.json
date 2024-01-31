@@ -1,0 +1,87 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "testing-ads-application;invalid-login",
+        "keyword": "Scenario Outline",
+        "line": 9,
+        "name": "Invalid Login",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "User logs in with credentials \"invalidUsrName\" and \"invalidPass\"",
+            "match": {
+              "location": "features/step_definitions/login_glue.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17130166
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "User should see an error message",
+            "match": {
+              "location": "features/step_definitions/login_glue.js:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 86374
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "testing-ads-application;successful-login",
+        "keyword": "Scenario Outline",
+        "line": 17,
+        "name": "Successful Login",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "User logs in with credentials \"admin\" and \"validPass\"",
+            "match": {
+              "location": "features/step_definitions/login_glue.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5121832
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "User should be able to see the Branch page",
+            "match": {
+              "location": "features/step_definitions/login_glue.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 104332
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "testing-ads-application",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Testing ADS Application",
+    "tags": [],
+    "uri": "features/login.feature"
+  }
+]

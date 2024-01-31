@@ -1,18 +1,18 @@
 // Define a function to make a POST request
 const axios = require('axios')
-const context = require('./context')
+const context = require('../context/context')
 
 const post = async (uri, formData) => {
   const requestHeaders = {
     'Content-Type':
       'multipart/form-data; boundary=<calculated when request is sent>'
   }
-  if (context.sessionToken) {
-    requestHeaders.Cookie = `JSESSIONID=${context.sessionToken}`
+  if (context.context.sessionToken) {
+    requestHeaders.Cookie = `JSESSIONID=${context.context.sessionToken}`
   }
 
   try {
-    const response = await axios.post(context.baseUrl + uri, formData, {
+    const response = await axios.post(context.context.baseUrl + uri, formData, {
       headers: requestHeaders
     })
 

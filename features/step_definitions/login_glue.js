@@ -1,8 +1,6 @@
 const { Given, When, Then } = require('@cucumber/cucumber')
-const context = require('../common/context')
-const http_client = require('../common/http_client')
+const http_client = require('../../common/client/http_client')
 const FormData = require('form-data')
-const axios = require('axios')
 let response = {}
 
 let index_uri = 'ads/index'

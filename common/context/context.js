@@ -1,19 +1,23 @@
-const { BeforeAll } = require('@cucumber/cucumber')
 const env_config = require('./env_config')
 const axios = require('axios')
 
 const context = {
+  environment: '',
   sessionToken: '',
   baseUrl: ''
 }
 
 var environment = process.env.NODE_ENV || 'local'
 
-BeforeAll(async () => {
+function startEnviroment () {
+  context.environment = environment
   context.baseUrl = env_config.getBaseUrl(environment)
+}
+
+async function newSession () {
+  startEnviroment()
   context.sessionToken = await getSessionCookie()
-  printEnviroment()
-})
+}
 
 async function getSessionCookie () {
   try {
@@ -35,12 +39,8 @@ async function getSessionCookie () {
   }
 }
 
-function printEnviroment () {
-  console.log('------------------- Context -------------------')
-  console.log(`|  -Enviroment = ${environment}                `)
-  console.log(`|  -BaseUrl = ${context.baseUrl}               `)
-  console.log(`|  -SessionToken = ${context.sessionToken}     `)
-  console.log('-----------------------------------------------')
+module.exports = {
+  context,
+  startEnviroment,
+  newSession
 }
-
-module.exports = context

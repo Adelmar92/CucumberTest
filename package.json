@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js"
+    "test": "./node_modules/.bin/cucumber-js --format json:reports/cucumber_report.json && node generate_report.js",
+    "test-order": "./node_modules/.bin/cucumber-js $(cat feature_order.txt) --format json:reports/cucumber_report.json && node generate_report.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,7 @@
     "@cucumber/cucumber": "^10.3.1"
   },
   "dependencies": {
-    "axios": "^1.6.5"
+    "axios": "^1.6.5",
+    "cucumber-html-reporter": "^7.1.1"
   }
 }
