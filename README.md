@@ -1,5 +1,5 @@
 <h1 align="center">
-  ADS Bendigo Cucumber test Testing
+  ADS Cucumber test Testing
 </h1>
 <p align="center">
   <b>Automated tests in plain language, for Node.js</b>
